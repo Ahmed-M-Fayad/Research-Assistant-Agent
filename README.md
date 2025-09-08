@@ -221,6 +221,6 @@ This project is licensed under the **MIT License** - see [LICENSE](LICENSE) for 
 <div align="center">
   <strong>🔬 Revolutionizing Research with AI Intelligence</strong>
   <br><br>
-  <img src="https://img.shields.io/badge/🎯_Status-Production_Ready-green?style=for-the-badge" alt="Production Ready">
+  <img src="https://img.shields.io/badge/🎯_Status-Under_Development-orange?style=for-the-badge" alt="Under Development">
   <img src="https://img.shields.io/badge/🚀_Goal-Research_Revolution-blue?style=for-the-badge" alt="Research Revolution">
 </div>
