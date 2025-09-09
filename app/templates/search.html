@@ -1,0 +1,27 @@
+<!-- templates/search.html -->
+{% extends "base.html" %} {% block title %}Search - 3aref{% endblock %} {% block
+content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2>Research Assistant</h2>
+      <p>Ask me anything and I'll help you research it!</p>
+
+      <form method="POST" action="{{ url_for('search') }}">
+        <div class="mb-3">
+          <label for="query" class="form-label">Your Research Question:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="query"
+            name="query"
+            placeholder="e.g., What is machine learning?"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

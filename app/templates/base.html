@@ -56,13 +56,23 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('index') }}">
+              <a class="nav-link" href="{{ url_for('search') }}">
                 <i class="fas fa-search me-1"></i>Search
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('research') }}">
                 <i class="fas fa-plus me-1"></i>New Research
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('help') }}">
+                <i class="fas fa-circle-question me-1"></i>Help
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}">
+                <i class="fas fa-info-circle me-1"></i>About
               </a>
             </li>
           </ul>
@@ -88,6 +98,14 @@
           <div class="col-md-6">
             <h5><i class="fas fa-brain me-2"></i>3aref</h5>
             <p class="mb-0">AI-powered research assistant</p>
+          </div>
+          <div class="col-md-6 text-md-end mt-3 mt-md-0">
+            <a href="{{ url_for('help') }}" class="text-light me-3">
+              <i class="fas fa-circle-question"></i> Help
+            </a>
+            <a href="{{ url_for('about') }}" class="text-light">
+              <i class="fas fa-info-circle"></i> About
+            </a>
           </div>
         </div>
       </div>

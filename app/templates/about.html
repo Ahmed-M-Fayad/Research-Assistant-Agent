@@ -1,9 +1,32 @@
+<!-- templates/about.html -->
 {% extends "base.html" %}
-{% block title %}3aref{% endblock %}
+
+{% block title %}About - 3aref{% endblock %}
+
 {% block content %}
-      <div class="text-center py-5">
-        <i class="fas fa-info-circle text-primary mb-3" style="font-size: 4rem"></i>
-        <h1>About 3aref</h1>
-        <p class="lead">Your AI-powered research assistant</p>
-      </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="mb-4">About 3aref</h1>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">AI-Powered Research Assistant</h5>
+                    <p class="card-text">
+                        3aref is an intelligent research assistant that helps you find reliable information, 
+                        analyze sources, and create comprehensive research reports using advanced AI technology.
+                    </p>
+                    
+                    <h6 class="mt-4">Features:</h6>
+                    <ul>
+                        <li>Quick search with instant answers</li>
+                        <li>Comprehensive research projects</li>
+                        <li>Source verification and citation</li>
+                        <li>Multi-source information gathering</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

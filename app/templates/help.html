@@ -1,9 +1,44 @@
+<!-- templates/help.html -->
 {% extends "base.html" %}
-{% block title %}3aref{% endblock %}
+
+{% block title %}Help - 3aref{% endblock %}
+
 {% block content %}
-      <div class="text-center py-5">
-        <i class="fas fa-question-circle text-primary mb-3" style="font-size: 4rem"></i>
-        <h1>Help & Support</h1>
-        <p class="lead">How can we assist you?</p>
-      </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="mb-4">How to Use 3aref</h1>
+            
+            <div class="accordion" id="helpAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#quickSearch">
+                            Quick Search
+                        </button>
+                    </h2>
+                    <div id="quickSearch" class="accordion-collapse collapse show" data-bs-parent="#helpAccordion">
+                        <div class="accordion-body">
+                            Use Quick Search for immediate answers to specific questions. 
+                            Simply type your question and get AI-powered responses with sources.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#researchProject">
+                            Research Projects
+                        </button>
+                    </h2>
+                    <div id="researchProject" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                        <div class="accordion-body">
+                            Create comprehensive research projects for deeper analysis. 
+                            Set your research topic and goals, then chat with the AI to build detailed reports.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

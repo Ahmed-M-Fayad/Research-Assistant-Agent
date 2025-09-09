@@ -1,0 +1,30 @@
+<!-- templates/search_results.html -->
+{% extends "base.html" %} {% block title %}Search Results - 3aref{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h2>Search Results</h2>
+      <p><strong>Query:</strong> {{ query }}</p>
+
+      <hr />
+
+      {% if result.success %}
+      <div class="alert alert-success">
+        <h4>Answer:</h4>
+        <p>{{ result.answer }}</p>
+      </div>
+
+      {% else %}
+      <div class="alert alert-danger">
+        <h4>Error:</h4>
+        <p>{{ result.error }}</p>
+        <p>{{ result.answer }}</p>
+      </div>
+      {% endif %}
+
+      <a href="{{ url_for('search') }}" class="btn btn-primary">New Search</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
