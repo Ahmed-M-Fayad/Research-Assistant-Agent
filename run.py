@@ -6,6 +6,7 @@ Flask application runner for development and production deployment
 import os
 import sys
 from app import create_app
+from app.agents.research_agent import research_agent
 
 
 def main():
@@ -19,13 +20,35 @@ def main():
         port = int(os.getenv("FLASK_PORT", 5000))
         debug = os.getenv("FLASK_ENV", "development") == "development"
 
-        print("🧠 Intelligent Research Assistant")
+        print("🧠 Intelligent Research Assistant (3aref)")
         print("=" * 50)
-        print(f"🌐 Server: http://{host}:{port}")
+
+        # Check agent health on startup
+        print("🔍 Initializing Research Agent...")
+        health = research_agent.health_check()
+        if health["status"] == "healthy":
+            print("✅ Research Agent is ready!")
+            print("✅ Wikipedia tool initialized")
+            print("✅ GROQ API connection verified")
+        else:
+            print(f"⚠️ Research Agent health check failed: {health['message']}")
+            print("⚠️ Check your configs/.env file and GROQ_API_KEY")
+
+        print(f"\n🌐 Server: http://{host}:{port}")
         print(f"🔧 Debug Mode: {debug}")
         print(f"📁 Environment: {os.getenv('FLASK_ENV', 'development')}")
         if debug:
             print("🔄 Auto-reload: Enabled")
+
+        print("\n📖 Available routes:")
+        print("   • /           - Home page")
+        print("   • /search     - Search interface")
+        print("   • /research   - New research")
+        print("   • /help       - Help page")
+        print("   • /about      - About page")
+        print("   • /health     - Health check")
+        print("   • /api/search - API endpoint")
+
         print("=" * 50)
         print("Press Ctrl+C to stop the server")
         print()
@@ -44,6 +67,7 @@ def main():
         sys.exit(0)
     except Exception as e:
         print(f"❌ Error starting application: {e}")
+        print(f"💡 Make sure your configs/.env file exists with GROQ_API_KEY")
         sys.exit(1)
 
 

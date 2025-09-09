@@ -1,9 +1,51 @@
+<!-- templates/research.html -->
 {% extends "base.html" %}
-{% block title %}3aref{% endblock %}
+
+{% block title %}Research - 3aref{% endblock %}
+
 {% block content %}
-      <div class="text-center py-5">
-        <i class="fas fa-search text-primary mb-3" style="font-size: 4rem"></i>
-        <h1>Research with 3aref</h1>
-        <p class="lead">Your AI-powered research assistant</p>
-      </div>
+<div class="container">
+    <div class="text-center mb-5">
+        <i class="fas fa-project-diagram text-primary mb-3" style="font-size: 3rem;"></i>
+        <h1 class="mb-3">New Research Project</h1>
+        <p class="lead text-muted">Create comprehensive research with AI assistance</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Setup Your Research</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="researchTitle" class="form-label">Research Topic</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="researchTitle"
+                                placeholder="e.g., AI Impact on Healthcare"
+                            >
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="researchScope" class="form-label">What do you want to explore?</label>
+                            <textarea 
+                                class="form-control" 
+                                id="researchScope"
+                                rows="3"
+                                placeholder="Describe your research goals..."
+                            ></textarea>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-play me-2"></i>Start Research
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
