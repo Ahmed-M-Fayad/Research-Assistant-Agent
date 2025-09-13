@@ -182,29 +182,5 @@ Provide a comprehensive response using multiple research tools."""
                 "answer": f"Research error: {str(e)}"
             }
 
-    def health_check(self) -> Dict:
-        """Simple health check"""
-        if not self.is_initialized:
-            return {"status": "unhealthy", "message": "Agent not initialized"}
-
-        try:
-            tools = self.tool_loader.load_all_tools()
-            test_response = self.search("What is AI?")
-
-            if test_response["success"] and len(test_response["answer"]) > 50:
-                return {
-                    "status": "healthy",
-                    "message": f"Agent operational with {len(tools)} tools"
-                }
-            else:
-                return {
-                    "status": "unhealthy", 
-                    "message": f"Test failed: {test_response.get('error', 'No response')}"
-                }
-
-        except Exception as e:
-            return {"status": "unhealthy", "message": f"Health check failed: {str(e)}"}
-
-
 # Global instance
 research_agent = ResearchAgentService()
