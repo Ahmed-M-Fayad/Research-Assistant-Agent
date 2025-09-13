@@ -17,7 +17,7 @@ class NewsInput(BaseModel):
 class NewsOutput(BaseModel):
     result: List[Dict[str, Any]] = Field(description="List of news articles with source, title, and URL")
 
-@tool("News Search", return_direct=True)
+# @tool("News Search", return_direct=True)
 def news_tool(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
     """
     Useful for when you need to find recent news articles on a topic.
@@ -50,5 +50,5 @@ def news_tool(query: str, max_results: int = 5) -> List[Dict[str, Any]]:
 
         return formatted_results
 
-    except Exception as e:
-        return f"❌ Error fetching from News API: {str(e)}"
+    except Exception:
+        return f"There is no news currently about this topic: {query}"

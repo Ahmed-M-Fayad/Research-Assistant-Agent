@@ -25,15 +25,6 @@ def main():
 
         # Check agent health on startup
         print("🔍 Initializing Research Agent...")
-        health = research_agent.health_check()
-        if health["status"] == "healthy":
-            print("✅ Research Agent is ready!")
-            print("✅ Wikipedia tool initialized")
-            print("✅ GROQ API connection verified")
-        else:
-            print(f"⚠️ Research Agent health check failed: {health['message']}")
-            print("⚠️ Check your configs/.env file and GROQ_API_KEY")
-
         print(f"\n🌐 Server: http://{host}:{port}")
         print(f"🔧 Debug Mode: {debug}")
         print(f"📁 Environment: {os.getenv('FLASK_ENV', 'development')}")
