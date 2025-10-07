@@ -13,7 +13,9 @@
       {% if result.answer['Wikipedia'] %}
       <h3 class="mb-4">📚 Wikipedia Overview</h3>
       <div class="research-section">
-        <div class="research-content">{{ result.answer['Wikipedia'] | safe }}</div>
+        <div class="research-content">
+          {{ result.answer['Wikipedia'] | safe }}
+        </div>
       </div>
       {% endif %}
 
